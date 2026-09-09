@@ -1,38 +1,58 @@
 # MagSafe LED Off
 
-A tiny installer that turns off the MagSafe charging LED on Apple Silicon Macs.
-
-## What it does
-
-This utility configures the Mac so that the LED on the MagSafe charging connector stays off.
-
-It does **not** disable charging or change battery charging behavior.
-
-## Requirements
-
-- Apple Silicon Mac
-- A MagSafe charging connector
-- A macOS/firmware version that permits MagSafe LED control
+Turn off the MagSafe charging LED on Apple Silicon Macs.
 
 ## Installation
 
-1. Download `Turn_MagSafe_LED_Off_Installer.zip`.
-2. Unzip it.
-3. Double-click `Turn_MagSafe_LED_Off.command`.
-4. Enter your administrator password when requested.
+**[Download the latest release](../../releases/latest)**
 
-The installer installs and configures [`batt`](https://github.com/charlie0129/batt), which provides the low-level MagSafe LED control.
+1. Download the `.command` installer from the latest release.
+2. Double-click `Turn_MagSafe_LED_Off_v1.1.command`.
+3. Enter your administrator password when requested.
+
+That's it.
+
+The installer configures the Mac so that the MagSafe charging LED stays off. **Charging itself is unaffected.**
+
+## Commands
+
+Run the installer normally to turn the LED off:
+
+Restore normal LED behavior:
+./Turn_MagSafe_LED_Off_v1.1.command --on
+
+Uninstall:
+./Turn_MagSafe_LED_Off_v1.1.command --uninstall
+
+
+## Requirements
+
+* Apple Silicon Mac
+* MagSafe charging connector with an LED
+* A macOS/firmware version that permits third-party MagSafe LED control
+
 
 ## Compatibility
 
-MagSafe LED control depends on Apple's hardware and firmware.
+MagSafe LED control depends on Apple’s hardware and firmware.
 
-Newer macOS/firmware versions may restrict third-party control of the MagSafe LED. If the LED cannot be controlled, the installer will report the problem rather than changing charging behavior.
+Some newer firmware versions prevent third-party software from controlling the MagSafe LED. The installer will report an error rather than changing your charging behavior.
 
-## Credits
 
-This project uses [`batt`](https://github.com/charlie0129/batt) by Charlie Chiang for low-level MagSafe and battery control.
+## How it works
+
+This project uses ⁠batt by Charlie Chiang for low-level MagSafe LED control.
+
+The installer uses the pinned batt v0.8.0 release and verifies the downloaded binary before installing it.
+
+
+## Development
+
+The initial implementation was developed with assistance from OpenAI’s ChatGPT.
+
 
 ## License
 
-MIT License
+This installer is released under the MIT License.
+
+The batt project is a separate project with its own license.
