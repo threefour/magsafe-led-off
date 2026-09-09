@@ -56,3 +56,5 @@ The initial implementation was developed with assistance from OpenAI’s ChatGPT
 This installer is released under the MIT License.
 
 The batt project is a separate project with its own license.
+
+Social media icon courtesy of https://www.flaticon.com/en/free-of-the-icons/charger
